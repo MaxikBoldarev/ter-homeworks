@@ -31,7 +31,7 @@ resource "docker_container" "nginx" {
 
 # 1. Отсутствует имя ресурса
 # 2. Имя начинается с цифры
-# 3. random_password было указано не верное емя ресурса
+# 3. random_password было указано неверное имя ресурса
 
   ports {
     internal = 80
