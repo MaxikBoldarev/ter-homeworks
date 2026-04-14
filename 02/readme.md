@@ -1,4 +1,4 @@
-Задание 1
+## Задание 1
 В качестве ответа всегда полностью прикладывайте ваш terraform-код в git.  Убедитесь что ваша версия Terraform =1.5.Х (версия 1.6.Х может вызывать проблемы с Яндекс провайдером)
 
 Изучите проект. В файле variables.tf объявлены переменные для Yandex provider.
@@ -15,7 +15,7 @@
 скриншот консоли, curl должен отобразить тот же внешний ip-адрес;
 ответы на вопросы.
 
-Ответ
+## Ответ
 <img width="2253" height="71" alt="image" src="https://github.com/user-attachments/assets/81cc654f-013d-46dd-9b4a-ee0445b06b7a" /> Версия платформы и синтаксическая ошибка в слове
 
 <img width="2486" height="87" alt="image" src="https://github.com/user-attachments/assets/f6f2d31a-9fa1-4557-b95c-113d225b80bf" /> Некорректно указаны ядра,не соотвествуют диапазону
@@ -34,16 +34,16 @@ core_fraction=5
 Эти функции позволят снизить затраты при использование облака в обучении.
 
 
-Задание 2
+## Задание 2
 
 Замените все хардкод-значения для ресурсов yandex_compute_image и yandex_compute_instance на отдельные переменные. К названиям переменных ВМ добавьте в начало префикс vm_web_ .  Пример: vm_web_name.
 Объявите нужные переменные в файле variables.tf, обязательно указывайте тип переменной. Заполните их default прежними значениями из main.tf.
 Проверьте terraform plan. Изменений быть не должно.
 
-Ответ
+## Ответ
 <img width="1281" height="400" alt="image" src="https://github.com/user-attachments/assets/e92c994c-6a89-4015-aee3-588504aa284f" />
 
-main.ft
+# main.ft
 
 resource "yandex_vpc_network" "develop" {
   name = var.vpc_name
@@ -91,7 +91,7 @@ resource "yandex_compute_instance" "platform" {
 
 }
 
-variables.ft
+# variables.ft
 
 variable "vm_web_ubuntu-2004-lts" {
   type        = string
@@ -130,19 +130,18 @@ variable "vm_web_core_fraction" {
 }
 
 
-
-Задание 3
+## Задание 3
 
 Создайте в корне проекта файл 'vms_platform.tf' . Перенесите в него все переменные первой ВМ.
 Скопируйте блок ресурса и создайте с его помощью вторую ВМ в файле main.tf: "netology-develop-platform-db" ,  cores  = 2, memory = 2, core_fraction = 20. Объявите её переменные с префиксом vm_db_ в том же файле ('vms_platform.tf').  ВМ должна работать в зоне "ru-central1-b"
 Примените изменения.
 
-Ответ
+## Ответ
 <img width="887" height="183" alt="image" src="https://github.com/user-attachments/assets/3e86032e-4fdb-4a41-85b4-3524228715ea" />
 <img width="1722" height="350" alt="image" src="https://github.com/user-attachments/assets/ae0e34df-06a7-4e5c-b7fb-3197c0f2307f" />
 
 
-vms_platform.tf
+# vms_platform.tf
 
 
 variable "vm_db_ubuntu-2004-lts" {
@@ -196,24 +195,24 @@ variable "vm_db_vpc_name" {
   description = "VPC network & subnet name"
 }
 
-Задание 4
+## Задание 4
 
 Объявите в файле outputs.tf один output , содержащий: instance_name, external_ip, fqdn для каждой из ВМ в удобном лично для вас формате.
 Примените изменения.
 
 В качестве решения приложите вывод значений ip-адресов команды terraform output.
-Ответ
+## Ответ
 
 <img width="887" height="400" alt="image" src="https://github.com/user-attachments/assets/af3d0b6e-4ed1-4f83-a580-7f74dfc09e84" />
 
 
-Задание 5
+## Задание 5
 
 В файле locals.tf опишите в одном local-блоке имя каждой ВМ, используйте интерполяцию ${..} с НЕСКОЛЬКИМИ переменными по примеру из лекции.
 Замените переменные внутри ресурса ВМ на созданные вами local-переменные.
 Примените изменения.
 
-Ответ
+## Ответ
 <img width="1253" height="758" alt="image" src="https://github.com/user-attachments/assets/06dd3faa-be5b-43ff-b6ee-4af95fad0c6e" />
 
 ### Задание 6
