@@ -36,3 +36,58 @@ variable "vms_ssh_root_key" {
   default     = "<your_ssh_ed25519_key>"
   description = "ssh-keygen -t ed25519"
 }
+
+###
+variable "vm_web_ubuntu-2004-lts" {
+  type        = string
+  default     = "ubuntu-2004-lts"
+  description = "image ubuntu-2004-lts"
+}
+
+variable "vm_web_netology-develop-platform-web" {
+  type        = string
+  default     = "netology-develop-platform-web"
+  description = "name-platform-vm"
+}
+
+variable "vm_web_standard-v1" {
+  type        = string
+  default     = "standard-v1"
+  description = "platform-id"
+}
+
+#variable "vm_web_cores" {
+#  type        = number
+#  default     = 2
+#  description = "cores"
+#}
+
+#variable "vm_web_memory" { 
+#  type        = number
+#  default     = 1
+#  description = "memory"
+#}
+
+#variable "vm_web_core_fraction" { 
+#  type        = number
+#  default     = 5
+#  description = "fraction"
+#}
+
+variable "name" { 
+  type        = string
+  default     = "netology-develop"
+  description = "locals name1"
+} 
+
+variable "my_object" {
+  type = object({
+    web = string
+    db = string
+  })
+  default = {
+    web = "platform-web"
+    db = "platform-db"
+  }
+  description = "locals name2"
+}
