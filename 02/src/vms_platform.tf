@@ -54,7 +54,7 @@ variable "metadatas" {
   type = map
   default = {
     serial-port-enable = "1"
-    ssh-keys           = "ssh-ed25519 !!!!!!!!!!!!!!!!!!!!"
+    ssh-keys           = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBUbSOp30Ned3kYwDluEK6naOSSbKCAhW7VRyuABv94S maxikboldarev13@yandex.ru"
     }
 }
 
